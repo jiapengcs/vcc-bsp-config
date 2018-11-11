@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # app name, must be modified!(used for directory name, so it cannot contains special symbols)
-APP_NAME=vcc-bsp-config
+APP_NAME=blog-alpha
 ARTIFACTS_NAME=artifacts.tar.gz
 BASE_PATH=~/deploy/$APP_NAME
 TARGET_PATH=$BASE_PATH/target
@@ -11,7 +11,7 @@ echo "=== Start Deploying... ==="
 
 # if app is running, get pid then kill the process
 cd $BASE_PATH
-pid=`cat pid.txt`
+pid=`cat ${TARGET_PATH}/pid.txt`
 if [ -n "$pid" ]
 then
     echo "Instance ${APP_NAME} is still running, pid: ${pid}, killing process..."
