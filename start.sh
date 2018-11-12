@@ -1,4 +1,5 @@
 #!/bin/sh
+source /etc/profile
 
 # app name, must be modified!(used for directory name, so it cannot contains special symbols)
 APP_NAME=vcc-bsp-config
