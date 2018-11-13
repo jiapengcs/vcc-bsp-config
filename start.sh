@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 source /etc/profile
 
 # app name, must be modified!(used for directory name, so it cannot contains special symbols)
