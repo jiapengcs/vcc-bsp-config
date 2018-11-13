@@ -1,5 +1,7 @@
 #!/bin/bash
 source /etc/profile
+echo $JAVA_HOME
+java -version
 
 # app name, must be modified!(used for directory name, so it cannot contains special symbols)
 APP_NAME=vcc-bsp-config
