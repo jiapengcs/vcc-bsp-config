@@ -1,15 +1,12 @@
-#!/bin/bash
-source /etc/profile
-echo $JAVA_HOME
-java -version
+#!/bin/sh
 
 # app name, must be modified!(used for directory name, so it cannot contains special symbols)
-APP_NAME=vcc-bsp-config
+APP_NAME=blog-alpha
 ARTIFACTS_NAME=artifacts.tar.gz
 BASE_PATH=~/deploy/$APP_NAME
 TARGET_PATH=$BASE_PATH/target
 
-echo "=== Start Deploying... ==="
+echo "\n=== Start Deploying... ===\n"
 
 
 # if app is running, get pid then kill the process
@@ -36,7 +33,7 @@ tar -zxvf $ARTIFACTS_NAME
 if [ $? != 0 ]
 then
     echo "extract file failed!"
-    echo "=== Deploy Failed! ==="
+    echo "\n=== Deploy Failed! ===\n"
     exit 1
 fi
 
@@ -48,5 +45,5 @@ nohup java -jar *.jar > logs.txt & echo $! > pid.txt
 echo "appending logs to logs.txt, and write pid to pid.txt..."
 sleep 1
 
-echo "=== Deploy Success! ==="
+echo "\n=== Deploy Success! ===\n"
 
