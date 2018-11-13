@@ -6,7 +6,7 @@ ARTIFACTS_NAME=artifacts.tar.gz
 BASE_PATH=~/deploy/$APP_NAME
 TARGET_PATH=$BASE_PATH/target
 
-echo "\n=== Start Deploying... ===\n"
+echo "\n=== Start Deploying... ==="
 
 
 # if app is running, get pid then kill the process
@@ -33,7 +33,7 @@ tar -zxvf $ARTIFACTS_NAME
 if [ $? != 0 ]
 then
     echo "extract file failed!"
-    echo "\n=== Deploy Failed! ===\n"
+    echo "=== Deploy Failed! ===\n"
     exit 1
 fi
 
@@ -45,5 +45,5 @@ nohup java -jar *.jar > logs.txt & echo $! > pid.txt
 echo "appending logs to logs.txt, and write pid to pid.txt..."
 sleep 1
 
-echo "\n=== Deploy Success! ===\n"
+echo "=== Deploy Success! ===\n"
 
